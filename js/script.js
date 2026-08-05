@@ -6,9 +6,14 @@
    1. SET YOUR AMAZON LISTING LINK HERE — updates every
       "Buy on Amazon" button across every page automatically.
    -------------------------------------------------------- */
-const AMAZON_LINK = "https://www.amazon.in/"; // TODO: replace with your real Pure India Amazon listing URL
+const AMAZON_LINK = "https://amzn.in/d/0aczdDut";
 const FLIPKART_LINK = "https://www.flipkart.com/"; // TODO: replace with your real Pure India Flipkart listing URL
 const MEESHO_LINK = "https://www.meesho.com/s/p/gzcj8j?utm_source=s_w";
+
+/* ---------------- WhatsApp customer support link ---------------- */
+const WHATSAPP_NUMBER = "919877934136"; // Pure India customer support
+const WHATSAPP_MESSAGE = "Hi Pure India! I'd like to place a direct order and get free shipping.";
+const WHATSAPP_LINK = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
 
 /* ---------------- Site loader ---------------- */
 (() => {
@@ -45,6 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.querySelectorAll('.meesho-cta').forEach(el => {
     el.href = MEESHO_LINK;
+    el.target = "_blank";
+    el.rel = "noopener";
+  });
+  document.querySelectorAll('.whatsapp-cta').forEach(el => {
+    el.href = WHATSAPP_LINK;
     el.target = "_blank";
     el.rel = "noopener";
   });
