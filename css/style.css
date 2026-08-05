@@ -444,7 +444,7 @@ p{ margin:0 0 1em; }
 .pill-tag strong{ font-size:1.15rem; }
 
 /* Promo slide (slide 2) — carousal-2.png already has the dark green
-   peacock/floral panel + "120+" pill baked into the photo itself;
+   peacock/floral panel baked into the photo itself;
    only the offer card is added here, sat in the panel's blank space. */
 .slide-promo .carousel-caption{
   top:27%;
@@ -811,6 +811,23 @@ section{ padding:76px 0; }
   display:flex; align-items:center; justify-content:center;
 }
 .footer-social svg{ width:16px; height:16px; }
+.footer-marketplaces-label{
+  font-family:'Manrope',sans-serif;
+  font-size:.72rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:rgba(246,241,228,.6);
+  margin:20px 0 10px;
+}
+.footer-marketplaces{ display:flex; align-items:center; gap:10px; }
+.footer-marketplaces a{
+  display:flex; align-items:center; justify-content:center;
+  width:40px; height:40px;
+  border-radius:10px;
+  background:var(--cream);
+  overflow:hidden;
+}
+.footer-marketplaces img{ width:28px; height:28px; object-fit:contain; }
 .footer-bottom{
   display:flex;
   justify-content:space-between;
@@ -851,6 +868,30 @@ section{ padding:76px 0; }
 }
 .gallery-thumbs{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:12px; }
 .gallery-thumbs .placeholder{ min-height:80px; }
+.gallery-main{ border-radius:var(--radius-lg); overflow:hidden; min-height:420px; }
+.gallery-main img{ width:100%; height:100%; object-fit:cover; display:block; }
+.gallery-thumbs .thumb{
+  border-radius:10px;
+  overflow:hidden;
+  min-height:80px;
+  cursor:pointer;
+  border:2px solid transparent;
+  transition:border-color .2s ease;
+}
+.gallery-thumbs .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+.gallery-thumbs .thumb.active,
+.gallery-thumbs .thumb:hover{ border-color:var(--gold); }
+.buy-elsewhere{ display:flex; align-items:center; gap:10px; margin-top:16px; }
+.buy-elsewhere span{ font-size:.78rem; color:var(--forest-light); font-weight:700; }
+.buy-elsewhere a{
+  display:flex; align-items:center; justify-content:center;
+  width:34px; height:34px;
+  border-radius:8px;
+  border:1.5px solid var(--line);
+  background:#fff;
+  overflow:hidden;
+}
+.buy-elsewhere img{ width:22px; height:22px; object-fit:contain; }
 .stock-note{ display:flex; align-items:center; gap:8px; font-size:.85rem; font-weight:700; color:var(--forest-light); margin-bottom:6px; }
 .stock-dot{ width:8px; height:8px; border-radius:50%; background:var(--forest-light); display:inline-block; }
 .qty-row{ display:flex; align-items:center; gap:16px; margin:24px 0; }

@@ -7,6 +7,8 @@
       "Buy on Amazon" button across every page automatically.
    -------------------------------------------------------- */
 const AMAZON_LINK = "https://www.amazon.in/"; // TODO: replace with your real Pure India Amazon listing URL
+const FLIPKART_LINK = "https://www.flipkart.com/"; // TODO: replace with your real Pure India Flipkart listing URL
+const MEESHO_LINK = "https://www.meesho.com/s/p/gzcj8j?utm_source=s_w";
 
 /* ---------------- Site loader ---------------- */
 (() => {
@@ -30,9 +32,19 @@ const AMAZON_LINK = "https://www.amazon.in/"; // TODO: replace with your real Pu
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Apply the Amazon link everywhere
+  // Apply the marketplace links everywhere
   document.querySelectorAll('.amazon-cta').forEach(el => {
     el.href = AMAZON_LINK;
+    el.target = "_blank";
+    el.rel = "noopener";
+  });
+  document.querySelectorAll('.flipkart-cta').forEach(el => {
+    el.href = FLIPKART_LINK;
+    el.target = "_blank";
+    el.rel = "noopener";
+  });
+  document.querySelectorAll('.meesho-cta').forEach(el => {
+    el.href = MEESHO_LINK;
     el.target = "_blank";
     el.rel = "noopener";
   });
@@ -181,12 +193,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------------- Gallery thumb swap (Shop page) ---------------- */
-  const thumbs = document.querySelectorAll('.gallery-thumbs .placeholder');
-  const mainImage = document.querySelector('.gallery-main');
+  const thumbs = document.querySelectorAll('.gallery-thumbs .thumb');
+  const mainImage = document.querySelector('.gallery-main img');
   if (thumbs.length && mainImage){
     thumbs.forEach(thumb => {
       thumb.addEventListener('click', () => {
-        mainImage.querySelector('span').textContent = thumb.querySelector('span').textContent;
+        const thumbImg = thumb.querySelector('img');
+        mainImage.src = thumbImg.src;
+        mainImage.alt = thumbImg.alt;
+        thumbs.forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
       });
     });
   }
