@@ -9,6 +9,7 @@
 const AMAZON_LINK = "https://amzn.in/d/0aczdDut"; // Spearmint Tea (default — used anywhere a button doesn't set its own data-amazon-link)
 const AMAZON_LINK_HIBISCUS = "https://www.amazon.in/dp/B0HHN81339";
 const AMAZON_LINK_TRAILMIX = "https://www.amazon.in/dp/B0HHMR45QD";
+const AMAZON_LINK_BUTTERFLYPEA = "https://amzn.in/d/01SbkFHP";
 const FLIPKART_LINK = "https://www.flipkart.com/"; // TODO: replace with your real Pure India Flipkart listing URL
 const MEESHO_LINK = "https://www.meesho.com/s/p/gzcj8j?utm_source=s_w";
 

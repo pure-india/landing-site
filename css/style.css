@@ -344,6 +344,8 @@ p{ margin:0 0 1em; }
   object-fit:cover;
   z-index:1;
 }
+.carousel-slide a{ position:absolute; inset:0; z-index:1; display:block; cursor:pointer; }
+.carousel-slide a img{ position:static; }
 .carousel-caption{
   position:absolute;
   left:6%;
@@ -1081,7 +1083,7 @@ section{ padding:76px 0; }
   background:var(--white);
   border:1.5px solid var(--line);
   border-radius:var(--radius-lg);
-  padding:20px;
+  padding:16px;
   transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 a.shop-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-soft); border-color:var(--gold); }
@@ -1098,10 +1100,28 @@ a.shop-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-soft); bo
   margin-bottom:14px;
 }
 .shop-card-visual svg{ width:38%; height:38%; opacity:.92; }
-.shop-card h3{ font-size:1.15rem; margin-bottom:6px; }
-.shop-card p{ font-size:.86rem; color:var(--forest-light); flex-grow:1; }
-.shop-card-foot{ display:flex; align-items:center; justify-content:space-between; margin-top:14px; padding-top:14px; border-top:1px solid var(--line); }
-.shop-card-foot .price{ font-size:1.2rem; }
+.shop-card h3{ font-size:1.08rem; line-height:1.25; margin-bottom:5px; }
+.shop-card p{
+  font-size:.82rem; color:var(--forest-light); margin-bottom:0;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.shop-card-rating{ display:flex; align-items:center; gap:4px; margin-bottom:5px; }
+.shop-card-rating svg{ width:12px; height:12px; color:var(--gold); flex-shrink:0; }
+.shop-card-rating span{ font-size:.7rem; color:var(--forest-light); font-weight:600; }
+.shop-card-tags{ display:flex; flex-wrap:wrap; gap:5px; margin-bottom:8px; }
+.shop-card-tag{ font-size:.64rem; font-weight:700; letter-spacing:.02em; color:var(--forest); background:var(--cream-dark); padding:2px 8px; border-radius:999px; white-space:nowrap; }
+.shop-card-foot{ display:flex; flex-direction:column; gap:8px; margin-top:10px; padding-top:10px; border-top:1px solid var(--line); }
+.shop-card-price-row{ display:flex; align-items:baseline; gap:7px; }
+.shop-card-foot .price{ font-size:1.1rem; font-weight:700; color:var(--forest); }
+.shop-card-price-old{ font-size:.8rem; color:var(--forest-light); text-decoration:line-through; opacity:.7; }
+.shop-card-cart-btn{
+  display:flex; align-items:center; justify-content:center; gap:7px;
+  width:100%; background:var(--gold); color:var(--white);
+  font-size:.82rem; font-weight:700; padding:9px 14px; border-radius:999px;
+  transition:background .2s ease;
+}
+.shop-card-cart-btn svg{ width:16px; height:16px; }
+a.shop-card:hover .shop-card-cart-btn{ background:var(--gold-dark); }
 .shop-card-flagship{ border-color:var(--gold); }
 .shop-card-bundle{ background:var(--forest); border-color:var(--forest); }
 .shop-card-bundle h3, .shop-card-bundle p{ color:var(--cream); }
@@ -1120,6 +1140,7 @@ a.shop-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-soft); bo
 .placeholder-trailmix{ background:linear-gradient(160deg,#6B4A2B,var(--gold)); }
 .placeholder-bundle{ background:linear-gradient(160deg,var(--forest),var(--olive)); }
 .placeholder-butterflypea{ background:linear-gradient(160deg,#4A3B8C,#8E7CD6); }
+.placeholder-spearmint{ background:linear-gradient(160deg,var(--forest),#5C8A5C); }
 .crosssell-butterflypea{ background:linear-gradient(160deg,#4A3B8C,#8E7CD6); color:var(--cream); }
 
 /* Cross-sell strip (bottom of each product page) */
@@ -1270,7 +1291,21 @@ a.shop-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-soft); bo
   .timeline{ grid-template-columns:1fr; }
   .timeline-3col{ grid-template-columns:1fr; }
   .value-grid{ grid-template-columns:1fr; gap:20px; }
-  .shop-grid{ grid-template-columns:1fr; }
+  .shop-grid{ grid-template-columns:1fr 1fr; gap:10px; }
+  .shop-card{ padding:10px; }
+  .shop-card h3{ font-size:.88rem; line-height:1.2; margin-bottom:3px; }
+  .shop-card p{ font-size:.72rem; -webkit-line-clamp:1; }
+  .shop-card-time{ font-size:.58rem; margin-bottom:5px; }
+  .shop-card-rating{ margin-bottom:4px; }
+  .shop-card-rating svg{ width:10px; height:10px; }
+  .shop-card-rating span{ font-size:.6rem; }
+  .shop-card-tags{ margin-bottom:6px; }
+  .shop-card-tag{ font-size:.58rem; padding:2px 6px; }
+  .shop-card-foot{ gap:6px; margin-top:8px; padding-top:8px; }
+  .shop-card-foot .price{ font-size:.96rem; }
+  .shop-card-price-old{ font-size:.7rem; }
+  .shop-card-cart-btn{ font-size:.74rem; padding:8px 10px; gap:5px; }
+  .shop-card-cart-btn svg{ width:14px; height:14px; }
   .gallery-thumbs{ grid-template-columns:repeat(4,1fr); }
   .newsletter{ padding:32px 24px; }
   .hero-carousel .carousel-slide{ height:420px; }
