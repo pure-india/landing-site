@@ -227,6 +227,24 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------------- Dynamic product image folders ---------------- */
   initDynamicThumbnails();
   initDynamicGalleries();
+
+  /* ---------------- Product variant selector (e.g. Butterfly Pea 40g/80g) ---------------- */
+  document.querySelectorAll('.variant-row').forEach(row => {
+    const priceEl = document.getElementById(row.dataset.priceTarget || 'bfpPrice');
+    const stockEl = document.getElementById(row.dataset.stockTarget || 'bfpStock');
+    const tagEl = document.getElementById(row.dataset.tagTarget || 'bfpTag');
+    row.querySelectorAll('.variant-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        row.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const weight = btn.dataset.weight;
+        const price = parseFloat(btn.dataset.price).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        if (priceEl) priceEl.textContent = `₹${price}`;
+        if (stockEl) stockEl.textContent = `${weight}g jar — ${btn.dataset.cups} cups per pack`;
+        if (tagEl) tagEl.textContent = `Loose Flower Tea · ${weight}g`;
+      });
+    });
+  });
 });
 
 /* =========================================================

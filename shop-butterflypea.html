@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shop Butterfly Pea Herbal Tea — Pure India</title>
-<meta name="description" content="Pure India Butterfly Pea Herbal Tea — 100% pure butterfly pea flowers, naturally caffeine-free, vibrant colour-changing tea. 80g pack. Order direct via WhatsApp.">
+<meta name="description" content="Pure India Butterfly Pea Herbal Tea — 100% pure butterfly pea flowers, naturally caffeine-free, vibrant colour-changing tea. Available in 40g and 80g packs. Order direct via WhatsApp.">
 <link rel="stylesheet" href="css/style.css">
 <script type="application/ld+json">
 {
@@ -12,11 +12,13 @@
   "@type": "Product",
   "name": "Pure India Butterfly Pea Herbal Tea",
   "brand": { "@type": "Brand", "name": "Pure India" },
-  "description": "100% pure butterfly pea flowers (Clitoria ternatea), naturally caffeine-free herbal tea. 80g pack.",
+  "description": "100% pure butterfly pea flowers (Clitoria ternatea), naturally caffeine-free herbal tea. Available in 40g and 80g packs.",
   "offers": {
-    "@type": "Offer",
+    "@type": "AggregateOffer",
     "priceCurrency": "INR",
-    "price": "1049.00",
+    "lowPrice": "649.00",
+    "highPrice": "1049.00",
+    "offerCount": "2",
     "availability": "https://schema.org/InStock",
     "url": "https://amzn.in/d/01SbkFHP"
   }
@@ -92,13 +94,18 @@
     </div>
 
     <div class="reveal">
-      <span class="tag" style="display:inline-block;background:var(--forest);color:var(--cream);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:14px;">Loose Flower Tea · 80g</span>
+      <span class="tag" id="bfpTag" style="display:inline-block;background:var(--forest);color:var(--cream);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:14px;">Loose Flower Tea · 80g</span>
       <h1 style="font-size:1.9rem;">Butterfly Pea Herbal Tea</h1>
       <p style="font-size:.85rem; color:var(--forest-light); font-weight:600; margin-top:-8px;">Feel Fresh, Feel You</p>
       <p>A striking deep-blue infusion made from 100% pure butterfly pea flowers — naturally caffeine-free, refreshing and soothing. Add a splash of lemon and watch it shift from blue to a vivid pink right in your cup.</p>
 
-      <div class="price-row"><span class="price">₹1,049.00</span></div>
-      <div class="stock-note"><span class="stock-dot"></span>80g jar — 100+ cups per pack</div>
+      <div class="variant-row" id="bfpVariants">
+        <button type="button" class="variant-btn" data-weight="40" data-price="649.00" data-cups="50+">40g</button>
+        <button type="button" class="variant-btn active" data-weight="80" data-price="1049.00" data-cups="100+">80g</button>
+      </div>
+
+      <div class="price-row"><span class="price" id="bfpPrice">₹1,049.00</span></div>
+      <div class="stock-note"><span class="stock-dot"></span><span id="bfpStock">80g jar — 100+ cups per pack</span></div>
 
       <div class="qty-row">
         <div class="qty-box">
@@ -175,7 +182,7 @@
         <span class="crosssell-tag">Daytime Ritual</span>
         <h4>Pure Spearmint Herbal Tea</h4>
         <p>Our original blend — for hormonal balance and a calmer day.</p>
-        <span class="crosssell-price">From ₹250</span>
+        <span class="crosssell-price">From ₹349</span>
       </a>
       <a href="shop-hibiscus.html" class="crosssell-card">
         <div class="crosssell-visual crosssell-hibiscus" aria-hidden="true" data-dynamic-image-folder="public/hibiscus images" data-dynamic-image-alt="Organic Hibiscus Tea">
